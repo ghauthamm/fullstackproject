@@ -1,0 +1,1 @@
+mongodb+srv://samyukthak24mca:sammca@cluster0.wiusbiy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

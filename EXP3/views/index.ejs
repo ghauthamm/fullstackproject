@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 32px 40px 40px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 24px;
+        }
+        a.button {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        a.button:hover {
+            background: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        tr:hover {
+            background: #e9ecef;
+        }
+        .actions a, .actions button {
+            margin-right: 8px;
+            font-size: 15px;
+        }
+        .actions form {
+            display: inline;
+        }
+        .actions button {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .actions button:hover {
+            background: #a71d2a;
+        }
+        .actions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Students</h1>
+        <a href="/students/new" class="button">Add New Student</a>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            <% students.forEach(function(student) { %>
+            <tr>
+                <td><%= student.name %></td>
+                <td><%= student.age %></td>
+                <td><%= student.email %></td>
+                <td class="actions">
+                    <a href="/students/<%= student._id %>/edit">Edit</a>
+                    <form action="/students/<%= student._id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+</body>
+</html> 
