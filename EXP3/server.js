@@ -6,11 +6,12 @@ const path = require('path');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://samyukthak24mca:sammca@cluster0.wiusbiy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://ghautham:Ghautham27@cluster0.bhzpueq.mongodb.net/studentDB?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
-
+  })
+  .then(() => console.log('✅ MongoDB connected successfully'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
 const studentSchema = new mongoose.Schema({
     name: String,
     age: Number,

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="counterApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Counter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 24px;
+        }
+        .counter {
+            font-size: 3em;
+            color: #3b82f6;
+            margin: 24px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .button-group {
+            display: flex;
+            gap: 24px;
+        }
+        button {
+            font-size: 2em;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: #3b82f6;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.12);
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background: #2563eb;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body ng-controller="CounterController">
+    <div class="container">
+        <h1>AngularJS Counter</h1>
+        <div class="counter">{{ count }}</div>
+        <div class="button-group">
+            <button ng-click="decrement()">-</button>
+            <button ng-click="increment()">+</button>
+        </div>
+    </div>
+
+    <script>
+        angular.module('counterApp', [])
+            .controller('CounterController', ['$scope', function($scope) {
+                $scope.count = 0;
+                $scope.increment = function() {
+                    $scope.count++;
+                };
+                $scope.decrement = function() {
+                    $scope.count--;
+                };
+            }]);
+    </script>
+</body>
+</html> 
