@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to your Dashboard!</h2>
+    <form id="logoutForm">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('logoutForm').onsubmit = async function(e) {
+      e.preventDefault();
+      await fetch('/api/logout', { method: 'POST' });
+      window.location = 'index.html';
+    };
+  </script>
+</body>
+</html> 
