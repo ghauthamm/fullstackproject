@@ -1,0 +1,60 @@
+body {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background: #fff;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  padding: 32px 24px;
+}
+h1 {
+  text-align: center;
+  color: #f76b1c;
+}
+label, select, button {
+  font-size: 1.1em;
+}
+#topic-select {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+#quiz-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.question {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+button {
+  background: #f76b1c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #fda085;
+}
+#result {
+  text-align: center;
+  font-size: 1.3em;
+  color: #388e3c;
+  margin-top: 20px;
+} 
